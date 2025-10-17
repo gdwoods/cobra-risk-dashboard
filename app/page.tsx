@@ -211,14 +211,14 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-6xl p-4 sm:p-6 md:p-10 space-y-6 md:space-y-8" style={{ backgroundColor: '#0a0a0a', color: '#ffffff', minHeight: '100vh' }}>
       <header className="card p-4 sm:p-6" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-4">
           <img 
             src="/cobra-logo.svg" 
             alt="Cobra Logo" 
-            className="w-10 h-10 sm:w-12 sm:h-12"
+            className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0"
             style={{ filter: 'brightness(1.1)' }}
           />
-          <div>
+          <div className="flex flex-col">
             <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">Cobra Risk Dashboard</h1>
             <p className="text-gray-400 text-sm sm:text-base">v1.0 – October 2025</p>
           </div>
