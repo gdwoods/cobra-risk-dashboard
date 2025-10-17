@@ -265,23 +265,33 @@ export default function Page() {
                 </div>
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Daily Loss:</span>
+                    <Tooltip content="Maximum daily realized loss allowed. When reached, new orders are disabled.">
+                      <span className="text-gray-400 cursor-help">Daily Loss:</span>
+                    </Tooltip>
                     <span className="font-medium">{pct(preset.dailyLossLimit, 1)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Total Loss:</span>
+                    <Tooltip content="Maximum total loss (realized + unrealized) allowed. When reached, all positions are liquidated.">
+                      <span className="text-gray-400 cursor-help">Total Loss:</span>
+                    </Tooltip>
                     <span className="font-medium">{pct(preset.totalLossLimit, 1)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Per-Symbol:</span>
+                    <Tooltip content="Maximum unrealized loss allowed per individual symbol.">
+                      <span className="text-gray-400 cursor-help">Per-Symbol:</span>
+                    </Tooltip>
                     <span className="font-medium">{pct(preset.perSymbolLossLimit, 1)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Max Exposure:</span>
+                    <Tooltip content="Maximum market value exposure allowed per individual symbol.">
+                      <span className="text-gray-400 cursor-help">Max Exposure:</span>
+                    </Tooltip>
                     <span className="font-medium">{pct(preset.perSymbolExposureLimit, 0)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Max Open Exposure Total:</span>
+                    <Tooltip content="Maximum total market value exposure allowed across all positions.">
+                      <span className="text-gray-400 cursor-help">Max Open Exposure Total:</span>
+                    </Tooltip>
                     <span className="font-medium">{pct(preset.totalExposureLimit, 0)}</span>
                   </div>
                 </div>
