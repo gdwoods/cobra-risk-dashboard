@@ -3,21 +3,22 @@
   <path d="M16 28 Q12 24 16 20 Q20 24 16 28" fill="#D4AF37" stroke="#B8860B" stroke-width="0.8"/>
   <path d="M16 24 Q14 22 16 20 Q18 22 16 24" fill="#CD853F" stroke="#A0522D" stroke-width="0.4"/>
   
-  <!-- Cobra head -->
+  <!-- Cobra head (golden yellow) -->
   <ellipse cx="16" cy="10" rx="5" ry="3" fill="#D4AF37" stroke="#B8860B" stroke-width="0.8"/>
   
   <!-- Cobra hood (widely flared) -->
   <path d="M6 10 Q16 2 26 10" stroke="#8B4513" stroke-width="1.5" fill="none"/>
   <path d="M6 10 Q16 3 26 10" stroke="#D4AF37" stroke-width="1" fill="none"/>
   
-  <!-- Hood interior (teal/blue-green) -->
+  <!-- Hood interior (teal/blue-green with layered texture) -->
   <path d="M8 10 Q16 5 24 10" fill="#20B2AA" stroke="#008B8B" stroke-width="0.4"/>
   <path d="M10 10 Q16 6 22 10" fill="#00CED1" stroke="#20B2AA" stroke-width="0.4"/>
+  <path d="M12 10 Q16 8 20 10" fill="#40E0D0" stroke="#00CED1" stroke-width="0.4"/>
   
   <!-- Hood outline (golden yellow) -->
   <path d="M6 10 Q16 2 26 10" stroke="#FFD700" stroke-width="0.4" fill="none"/>
   
-  <!-- Eyes -->
+  <!-- Eyes (white with brown pupils and highlights) -->
   <circle cx="14" cy="8" r="1" fill="#FFFFFF"/>
   <circle cx="18" cy="8" r="1" fill="#FFFFFF"/>
   <circle cx="14" cy="8" r="0.5" fill="#8B4513"/>
@@ -30,13 +31,19 @@
   <path d="M17 12 L18 14" stroke="#FF0000" stroke-width="1" fill="none"/>
   <path d="M15 12 L16 14" stroke="#FF0000" stroke-width="0.8" fill="none"/>
   
-  <!-- Head markings -->
+  <!-- Head markings (brown patterns) -->
   <path d="M13 7 Q16 6 19 7" stroke="#8B4513" stroke-width="0.4" fill="none"/>
   <path d="M12 8 Q16 6 20 8" stroke="#8B4513" stroke-width="0.4" fill="none"/>
+  <path d="M11 9 Q16 7 21 9" stroke="#8B4513" stroke-width="0.4" fill="none"/>
   
-  <!-- Body scales pattern -->
+  <!-- Body scales pattern (brown markings) -->
   <circle cx="14" cy="22" r="0.6" fill="#8B4513"/>
   <circle cx="18" cy="21" r="0.6" fill="#8B4513"/>
   <circle cx="14" cy="26" r="0.6" fill="#8B4513"/>
   <circle cx="18" cy="25" r="0.6" fill="#8B4513"/>
+  <circle cx="16" cy="23" r="0.4" fill="#A0522D"/>
+  
+  <!-- Additional body texture -->
+  <path d="M13 21 Q16 19 19 21" stroke="#8B4513" stroke-width="0.4" fill="none"/>
+  <path d="M13 25 Q16 23 19 25" stroke="#8B4513" stroke-width="0.4" fill="none"/>
 </svg>
