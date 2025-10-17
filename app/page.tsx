@@ -177,6 +177,19 @@ export default function Page() {
           <li>Click <b>Export RiskControl.cfg</b> to download a complete DAS configuration file with all your settings.</li>
           <li>All inputs and custom settings persist in your browser (local only - no data leaves your device).</li>
         </ol>
+        <div className="mt-4 pt-3 border-t border-gray-600">
+          <p className="text-sm text-gray-400">
+            📚 For detailed DAS Risk Control documentation, visit: 
+            <a 
+              href="https://dastrader.com/docs/risk-control/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline ml-1"
+            >
+              DAS Risk Control Guide
+            </a>
+          </p>
+        </div>
       </section>
 
       <section className="card p-4 sm:p-6" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
@@ -669,30 +682,6 @@ export default function Page() {
       )}
 
 
-      <section className="card p-4 sm:p-6 space-y-4" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <h2 className="text-lg font-semibold">How to Use</h2>
-          <button 
-            onClick={exportCfg} 
-            className="btn btn-primary px-6 py-3 text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-            style={{ 
-              backgroundColor: '#3b82f6', 
-              borderColor: '#3b82f6',
-              color: '#ffffff',
-              border: '2px solid #3b82f6'
-            }}
-          >
-            📥 Export RiskControl.cfg
-          </button>
-        </div>
-        <ol className="list-decimal list-inside text-gray-300 space-y-1">
-          <li>Choose a <b>Risk Mode</b> (Conservative, Standard, Aggressive, or Custom) and enter your <b>Equity</b>, <b>Today's P&L</b>, and <b>Halted Exposure</b>.</li>
-          <li>If using <b>Custom</b> mode, adjust all risk settings to your preferences using the comprehensive controls above.</li>
-          <li>Watch the color-coded <b>Status</b> chips (🟢🟡🔴) and the <b>Flatten</b> recommendation for real-time risk assessment.</li>
-          <li>Click <b>Export RiskControl.cfg</b> to download a complete DAS configuration file with all your settings.</li>
-          <li>All inputs and custom settings persist in your browser (local only - no data leaves your device).</li>
-        </ol>
-      </section>
 
       <footer className="text-center text-xs text-gray-400 pb-8">
         © {new Date().getFullYear()} Cobra Risk Dashboard · Dark theme · No data leaves your browser.
