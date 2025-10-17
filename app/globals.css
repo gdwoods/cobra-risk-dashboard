@@ -16,6 +16,13 @@ html, body {
   color: inherit;
 }
 
+/* Override for tooltip elements */
+.tooltip,
+.tooltip * {
+  background-color: unset !important;
+  color: unset !important;
+}
+
 /* Card styles */
 .card {
   @apply rounded-lg border border-gray-700 bg-gray-800 text-white shadow-lg;
@@ -69,43 +76,45 @@ html, body {
 
 /* Tooltip styles */
 .tooltip {
-  position: relative;
-  display: inline-block;
+  position: relative !important;
+  display: inline-block !important;
 }
 
 .tooltip .tooltip-content {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 8px;
-  padding: 8px 12px;
-  background-color: #1f2937;
-  color: #ffffff;
-  font-size: 12px;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  width: 192px;
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
-  pointer-events: none;
-  z-index: 50;
+  position: absolute !important;
+  bottom: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-bottom: 8px !important;
+  padding: 8px 12px !important;
+  background-color: #1f2937 !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  width: 192px !important;
+  text-align: center !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.2s, visibility 0.2s !important;
+  pointer-events: none !important;
+  z-index: 9999 !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
 }
 
 .tooltip .tooltip-content::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 4px solid transparent;
-  border-top-color: #1f2937;
+  content: '' !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border: 4px solid transparent !important;
+  border-top-color: #1f2937 !important;
 }
 
 .tooltip:hover .tooltip-content {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 

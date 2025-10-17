@@ -8,10 +8,63 @@ type Status = "Safe" | "Caution" | "Danger";
 // Tooltip component
 function Tooltip({ children, content }: { children: React.ReactNode; content: string }) {
   return (
-    <div className="tooltip">
+    <div 
+      style={{ 
+        position: 'relative', 
+        display: 'inline-block'
+      }}
+      onMouseEnter={(e) => {
+        const tooltip = e.currentTarget.querySelector('.tooltip-popup') as HTMLElement;
+        if (tooltip) {
+          tooltip.style.opacity = '1';
+          tooltip.style.visibility = 'visible';
+        }
+      }}
+      onMouseLeave={(e) => {
+        const tooltip = e.currentTarget.querySelector('.tooltip-popup') as HTMLElement;
+        if (tooltip) {
+          tooltip.style.opacity = '0';
+          tooltip.style.visibility = 'hidden';
+        }
+      }}
+    >
       {children}
-      <div className="tooltip-content">
+      <div 
+        className="tooltip-popup"
+        style={{
+          position: 'absolute',
+          bottom: '100%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          marginBottom: '8px',
+          padding: '8px 12px',
+          backgroundColor: '#1f2937',
+          color: '#ffffff',
+          fontSize: '12px',
+          borderRadius: '6px',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+          width: '192px',
+          textAlign: 'center',
+          opacity: 0,
+          visibility: 'hidden',
+          transition: 'opacity 0.2s, visibility 0.2s',
+          pointerEvents: 'none',
+          zIndex: 9999,
+          whiteSpace: 'normal',
+          wordWrap: 'break-word'
+        }}
+      >
         {content}
+        <div 
+          style={{
+            position: 'absolute',
+            top: '100%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            border: '4px solid transparent',
+            borderTopColor: '#1f2937'
+          }}
+        ></div>
       </div>
     </div>
   );
