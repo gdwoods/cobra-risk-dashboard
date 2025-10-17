@@ -77,8 +77,8 @@ export default function Page() {
   const profitLockDrawdown = currentSettings.profitLockDrawdown;
 
   const remainingBudget = dayLossLimit - todaysPnL;
-  const remainingStatus: Status = remainingBudget <  -0.25 * dayLossLimit ? "Danger"
-                                : remainingBudget <  -0.5  * dayLossLimit ? "Caution"
+  const remainingStatus: Status = remainingBudget < 0.25 * Math.abs(dayLossLimit) ? "Danger"
+                                : remainingBudget < 0.5 * Math.abs(dayLossLimit) ? "Caution"
                                 : "Safe";
 
   // Total loss calculation should be based on total unrealized + realized losses
@@ -88,7 +88,7 @@ export default function Page() {
   const haltedPct = equity > 0 ? haltedExposure / equity : 0;
   const haltedStatus: Status = haltedPct > 0.40 ? "Danger" : haltedPct > 0.20 ? "Caution" : "Safe";
 
-  const flattenNow = (remainingBudget < 500) || (haltedPct > 0.40);
+  const flattenNow = (remainingBudget < 0.1 * Math.abs(dayLossLimit)) || (haltedPct > 0.40);
 
   function statusColor(s: Status) {
     return s === "Danger" ? "bg-danger" : s === "Caution" ? "bg-caution" : "bg-safe";
@@ -416,8 +416,8 @@ export default function Page() {
             </div>
 
             <div>Total Loss Used</div>
-            <div className={"rounded-full px-2.5 py-0.5 text-xs font-medium text-center " + (totalLossUsed > totalLossLimit * 0.8 ? "bg-danger" : totalLossUsed > totalLossLimit * 0.5 ? "bg-caution" : "bg-safe")}>
-              {statusIcon(totalLossUsed > totalLossLimit * 0.8 ? "Danger" : totalLossUsed > totalLossLimit * 0.5 ? "Caution" : "Safe")} {dollars(totalLossUsed)} · {totalLossRemaining > 0 ? "Safe" : "Danger"}
+            <div className={"rounded-full px-2.5 py-0.5 text-xs font-medium text-center " + (Math.abs(totalLossUsed) > Math.abs(totalLossLimit) * 0.8 ? "bg-danger" : Math.abs(totalLossUsed) > Math.abs(totalLossLimit) * 0.5 ? "bg-caution" : "bg-safe")}>
+              {statusIcon(Math.abs(totalLossUsed) > Math.abs(totalLossLimit) * 0.8 ? "Danger" : Math.abs(totalLossUsed) > Math.abs(totalLossLimit) * 0.5 ? "Caution" : "Safe")} {dollars(totalLossUsed)} · {Math.abs(totalLossRemaining) > Math.abs(totalLossLimit) * 0.2 ? "Safe" : "Danger"}
             </div>
 
             <div>Flatten Recommendation</div>
