@@ -331,7 +331,7 @@ export default function Page() {
       </section>
 
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }} className="grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-        <div className="card p-6" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
+        <div className="card p-8 pb-10" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
           <h2 className="text-xl font-bold mb-6 text-center">📊 Inputs</h2>
           
           <div className="space-y-6">
@@ -408,7 +408,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="card p-4 sm:p-6 space-y-4" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
+        <div className="card p-8 space-y-4" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
           <h2 className="text-lg font-semibold">Status</h2>
           {hasValidationErrors && (
             <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-3">
@@ -443,7 +443,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="card p-4 sm:p-6 space-y-4" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
+        <div className="card p-8 space-y-4" style={{ backgroundColor: '#1f2937', borderColor: '#374151', color: '#ffffff' }}>
         <h2 className="text-lg font-semibold">Calculated Limits</h2>
           <div className="grid grid-cols-1 gap-3 sm:gap-4">
             {mode === "Custom" ? (
