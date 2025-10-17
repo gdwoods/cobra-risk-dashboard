@@ -215,7 +215,7 @@ export default function Page() {
           <img 
             src="/cobra-logo.svg" 
             alt="Cobra Logo" 
-            className="w-8 h-8 sm:w-10 sm:h-10"
+            className="w-10 h-10 sm:w-12 sm:h-12"
             style={{ filter: 'brightness(1.1)' }}
           />
           <div>
