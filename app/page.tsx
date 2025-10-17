@@ -77,8 +77,11 @@ export default function Page() {
   const profitLockDrawdown = currentSettings.profitLockDrawdown;
 
   const remainingBudget = dayLossLimit - todaysPnL;
-  const remainingStatus: Status = remainingBudget < 0.25 * Math.abs(dayLossLimit) ? "Danger"
-                                : remainingBudget < 0.5 * Math.abs(dayLossLimit) ? "Caution"
+  // For status, we want to check how much of the loss limit has been used
+  const lossUsed = Math.abs(todaysPnL);
+  const lossLimit = Math.abs(dayLossLimit);
+  const remainingStatus: Status = lossUsed > 0.8 * lossLimit ? "Danger"
+                                : lossUsed > 0.5 * lossLimit ? "Caution"
                                 : "Safe";
 
   // Total loss calculation should be based on total unrealized + realized losses
@@ -88,7 +91,7 @@ export default function Page() {
   const haltedPct = equity > 0 ? haltedExposure / equity : 0;
   const haltedStatus: Status = haltedPct > 0.40 ? "Danger" : haltedPct > 0.20 ? "Caution" : "Safe";
 
-  const flattenNow = (remainingBudget < 0.1 * Math.abs(dayLossLimit)) || (haltedPct > 0.40);
+  const flattenNow = (lossUsed > 0.9 * lossLimit) || (haltedPct > 0.40);
 
   function statusColor(s: Status) {
     return s === "Danger" ? "bg-danger" : s === "Caution" ? "bg-caution" : "bg-safe";
@@ -678,7 +681,7 @@ export default function Page() {
               </label>
             </Tooltip>
           </div>
-        </section>
+      </section>
       )}
 
 
