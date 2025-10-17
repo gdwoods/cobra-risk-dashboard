@@ -10,7 +10,7 @@ function Tooltip({ children, content }: { children: React.ReactNode; content: st
   return (
     <div className="relative group inline-block">
       {children}
-      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 w-64">
+      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-50 w-48 text-center">
         {content}
         <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-800"></div>
       </div>
@@ -265,31 +265,31 @@ export default function Page() {
                 </div>
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
-                    <Tooltip content="Maximum daily realized loss allowed. When reached, new orders are disabled.">
+                    <Tooltip content="Daily realized loss limit. Disables new orders when reached.">
                       <span className="text-gray-400 cursor-help">Daily Loss:</span>
                     </Tooltip>
                     <span className="font-medium">{pct(preset.dailyLossLimit, 1)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <Tooltip content="Maximum total loss (realized + unrealized) allowed. When reached, all positions are liquidated.">
+                    <Tooltip content="Total loss limit (realized + unrealized). Liquidates all positions when reached.">
                       <span className="text-gray-400 cursor-help">Total Loss:</span>
                     </Tooltip>
                     <span className="font-medium">{pct(preset.totalLossLimit, 1)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <Tooltip content="Maximum unrealized loss allowed per individual symbol.">
+                    <Tooltip content="Unrealized loss limit per symbol.">
                       <span className="text-gray-400 cursor-help">Per-Symbol:</span>
                     </Tooltip>
                     <span className="font-medium">{pct(preset.perSymbolLossLimit, 1)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <Tooltip content="Maximum market value exposure allowed per individual symbol.">
+                    <Tooltip content="Market value exposure limit per symbol.">
                       <span className="text-gray-400 cursor-help">Max Exposure:</span>
                     </Tooltip>
                     <span className="font-medium">{pct(preset.perSymbolExposureLimit, 0)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <Tooltip content="Maximum total market value exposure allowed across all positions.">
+                    <Tooltip content="Total market value exposure limit across all positions.">
                       <span className="text-gray-400 cursor-help">Max Open Exposure Total:</span>
                     </Tooltip>
                     <span className="font-medium">{pct(preset.totalExposureLimit, 0)}</span>
