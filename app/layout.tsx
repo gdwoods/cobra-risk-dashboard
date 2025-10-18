@@ -2,11 +2,11 @@
 export const metadata = { 
   title: "Cobra Risk Dashboard", 
   description: "Intraday risk guardrails for DAS/Cobra",
-  icons: {
-    icon: '/cobra-favicon.svg',
-    shortcut: '/cobra-favicon.svg',
-    apple: '/cobra-favicon.svg',
-  },
+        icons: {
+          icon: '/cobra.png',
+          shortcut: '/cobra.png',
+          apple: '/cobra.png',
+        },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
