@@ -259,8 +259,8 @@ export default function Page() {
               rel="noopener noreferrer"
               className="underline ml-1"
               style={{ color: '#fbbf24', textDecorationColor: '#fbbf24' }}
-              onMouseEnter={(e) => e.target.style.color = '#f59e0b'}
-              onMouseLeave={(e) => e.target.style.color = '#fbbf24'}
+              onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#f59e0b'}
+              onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#fbbf24'}
             >
               DAS Risk Control Guide
             </a>
