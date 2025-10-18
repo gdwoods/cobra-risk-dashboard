@@ -245,7 +245,7 @@ export default function Page() {
         </div>
         <ol className="list-decimal list-inside text-gray-300 space-y-1">
           <li>Choose a <b>Risk Mode</b> (Conservative, Standard, Aggressive, or Custom) and enter your <b>Equity</b>, <b>Today's P&L</b>, and <b>Halted Exposure</b>.</li>
-          <li>If using <b>Custom</b> mode, adjust all risk settings to your preferences using the comprehensive controls above.</li>
+          <li>If using <b>Custom</b> mode, adjust all risk settings to your preferences using the comprehensive controls below.</li>
           <li>Watch the color-coded <b>Status</b> chips (🟢🟡🔴) and the <b>Flatten</b> recommendation for real-time risk assessment.</li>
           <li>Click <b>Export RiskControl.cfg</b> to download a complete DAS configuration file with all your settings.</li>
           <li>All inputs and custom settings persist in your browser (local only - no data leaves your device).</li>
@@ -257,7 +257,10 @@ export default function Page() {
               href="https://dastrader.com/docs/risk-control/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 underline ml-1"
+              className="underline ml-1"
+              style={{ color: '#fbbf24', textDecorationColor: '#fbbf24' }}
+              onMouseEnter={(e) => e.target.style.color = '#f59e0b'}
+              onMouseLeave={(e) => e.target.style.color = '#fbbf24'}
             >
               DAS Risk Control Guide
             </a>
