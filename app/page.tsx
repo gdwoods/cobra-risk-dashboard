@@ -341,24 +341,6 @@ export default function Page() {
                     </Tooltip>
                     <span className="font-medium">{pct(preset.perSymbolLossLimit, 1)}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <Tooltip content="Market value exposure limit per symbol. Max exposure per ticker.">
-                      <span className="text-gray-400 cursor-help">Max Exposure:</span>
-                    </Tooltip>
-                    <span className="font-medium">{pct(preset.perSymbolExposureLimit, 0)}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <Tooltip content="Total market value exposure limit across all positions. Max total exposure.">
-                      <span className="text-gray-400 cursor-help">Max Open Exposure Total:</span>
-                    </Tooltip>
-                    <span className="font-medium">{pct(preset.totalExposureLimit, 0)}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <Tooltip content="Warning threshold for loss. Popup heads-up alert.">
-                      <span className="text-gray-400 cursor-help">Warning Loss:</span>
-                    </Tooltip>
-                    <span className="font-medium">{pct(preset.profitLockStart, 1)}</span>
-                  </div>
                 </div>
                 <div className="mt-3 pt-2 border-t border-gray-600">
                   <div 
@@ -550,9 +532,6 @@ export default function Page() {
               <>
                 <Metric label="Total Loss (TotalLossLimit)" value={dollars(totalLossLimit)} />
                 <Metric label="Per-Symbol Unrealized (PosUnrealLossLimit)" value={dollars(perSymbolLimit)} />
-                <Metric label="Max Exposure / Ticker (PosMktValueLimit)" value={dollars(perTickerExposure)} />
-                <Metric label="Total Exposure (OpenPosValueLimit)" value={dollars(totalExposure)} />
-                <Metric label="Warning Loss (ProfitLockStart)" value={dollars(profitLockStart)} />
               </>
             )}
           </div>

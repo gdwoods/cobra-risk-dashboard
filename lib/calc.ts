@@ -29,8 +29,8 @@ export interface RiskSettings {
 export const PRESET_MAP: Record<Mode, RiskSettings> = {
   Conservative: {
     dailyLossLimit: 0,           // Not used in simplified presets
-    totalLossLimit: 0.08,        // 8% (more conservative than standard 12%)
-    perSymbolLossLimit: 0.015,   // 1.5% (more conservative than standard 2%)
+    totalLossLimit: 0.10,        // 10%
+    perSymbolLossLimit: 0.02,    // 2%
     perSymbolExposureLimit: 0.10, // 10% (more conservative than standard 15%)
     totalExposureLimit: 0.40,    // 40% (more conservative than standard 50%)
     profitLockStart: 0.06,       // 6% (warning at 6% instead of 9%)
@@ -46,8 +46,8 @@ export const PRESET_MAP: Record<Mode, RiskSettings> = {
   },
   Standard: {
     dailyLossLimit: 0,           // Not used in simplified presets
-    totalLossLimit: 0.12,        // 12%
-    perSymbolLossLimit: 0.02,    // 2%
+    totalLossLimit: 0.15,        // 15%
+    perSymbolLossLimit: 0.035,   // 3.5%
     perSymbolExposureLimit: 0.15, // 15%
     totalExposureLimit: 0.50,    // 50%
     profitLockStart: 0.09,       // 9% (WarningLoss)
@@ -63,8 +63,8 @@ export const PRESET_MAP: Record<Mode, RiskSettings> = {
   },
   Aggressive: {
     dailyLossLimit: 0,           // Not used in simplified presets
-    totalLossLimit: 0.15,        // 15% (more aggressive than standard 12%)
-    perSymbolLossLimit: 0.025,   // 2.5% (more aggressive than standard 2%)
+    totalLossLimit: 0.20,        // 20%
+    perSymbolLossLimit: 0.05,    // 5%
     perSymbolExposureLimit: 0.20, // 20% (more aggressive than standard 15%)
     totalExposureLimit: 0.60,    // 60% (more aggressive than standard 50%)
     profitLockStart: 0.12,       // 12% (warning at 12% instead of 9%)
